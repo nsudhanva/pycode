@@ -32,7 +32,7 @@ test_chain = LLMChain(llm=llm, prompt=test_prompt, output_key="test")
 chain = SequentialChain(
     chains=[code_chain, test_chain],
     input_variables=["language", "task"],
-    output_variables=["code", "test"]
+    output_variables=["code", "test"],
 )
 
 result = chain({"language": args.language, "task": args.task})
